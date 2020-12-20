@@ -22,3 +22,8 @@ services:
       - POSTGRES_DB=app
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=notsosecretpassword
+    volumes:
+      - pizza_api_data:/var/lib/postgresql/data
+
+volumes:
+  pizza_api_data:
