@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "30a82607-3ce1-4b21-bdee-c9f40ab1194d",
+		"name": "tdp-pizza-api",
+		"description": "Lista de endpoints creados para la REST API para una pizzeria, un proyecto de prueba de Technologies Development Paraguay.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Token DRF",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/users/drf-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"drf-token"
+							]
+						},
+						"description": "Obtiene el token de DRF a partir de los campos `username` y `password` del usuario."
+					},
+					"response": []
+				},
+				{
+					"name": "Token JWT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/users/jwt-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"jwt-token"
+							]
+						},
+						"description": "Obtiene el token de JWT a partir de los campos `username` y `password` del usuario."
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Token JWT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/users/jwt-token/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"jwt-token",
+								"refresh"
+							]
+						},
+						"description": "Actualiza el token de JWT."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pizzas",
+			"item": [
+				{
+					"name": "Lista Pizzas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/pizzas/pizzas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pizzas",
+								"pizzas",
+								""
+							]
+						},
+						"description": "Lista de pizzas con los campos `id`, `name`, `price` y `total_ingredients`. Requiere Autenticacion.\n* Los usuarios staff o superusuario pueden visualizar todas las pizzas.\n* Los demas usuarios pueden visualizar las pizzas disponibles."
+					},
+					"response": []
+				},
+				{
+					"name": "Crear una Pizza",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/pizzas/pizzas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pizzas",
+								"pizzas",
+								""
+							]
+						},
+						"description": "Crea un objeto pizza pasando los campos `name`, `price`, `is_active` e `ingredients`. Requiere Autentication."
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Pizza",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/pizzas/pizzas/<ID-PIZZA>/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pizzas",
+								"pizzas",
+								"<ID-PIZZA>",
+								""
+							]
+						},
+						"description": "Muestra el detalle de una Pizza, con los campos `id`, `name`, `price`, `is_active` y los ingredientes. Requiere autenticacion.\n\n**Obs**: reemplazar el texto *\\<ID-PIZZA>* por el valor correspondiente."
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Pizza",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/pizzas/pizzas/<ID-PIZZA>/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pizzas",
+								"pizzas",
+								"<ID-PIZZA>",
+								""
+							]
+						},
+						"description": "Actualiza los datos de una Pizza. Se debe enviar todos los campos del objeto. Requiere Autenticacion.\n\n**Obs**: reemplazar el texto *\\<ID-PIZZA>* por el valor correspondiente."
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Parcial Pizza",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/pizzas/pizzas/<ID-PIZZA>/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pizzas",
+								"pizzas",
+								"<ID-PIZZA>",
+								""
+							]
+						},
+						"description": "Actualiza los datos de una Pizza. Solo es necesario enviar los datos a ser modificados. Requiere Autenticacion.\n\n**Obs**: reemplazar el texto *\\<ID-PIZZA>* por el valor correspondiente."
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Ingredientes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/pizzas/pizzas/<ID-PIZZA>/ingredientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pizzas",
+								"pizzas",
+								"<ID-PIZZA>",
+								"ingredientes",
+								""
+							]
+						},
+						"description": "Action personalizada para la agregar y quitar ingredientes. Requiere Autenticación.\n\n**Obs**: reemplazar el texto *\\<ID-PIZZA>* por el valor correspondiente."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ingredientes",
+			"item": [
+				{
+					"name": "Crear Ingrediente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/pizzas/ingredientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pizzas",
+								"ingredientes",
+								""
+							]
+						},
+						"description": "Crea un objeto Ingrediente pasando los campos `name` y `category` (puede ser 'b' para Básico y 'p' para Premium). Requiere autenticación."
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Ingrediente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/pizzas/ingredientes/<ID-INGREDIENTE>/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pizzas",
+								"ingredientes",
+								"<ID-INGREDIENTE>",
+								""
+							]
+						},
+						"description": "Actualiza los datos de un Ingrediente. Requiere Autenticacion.\n\n**Obs**: reemplazar el texto *\\<ID-INGREDIENTE>* por el valor correspondiente."
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Ingrediente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/pizzas/ingredientes/<ID-INGREDIENTE>/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pizzas",
+								"ingredientes",
+								"<ID-INGREDIENTE>",
+								""
+							]
+						},
+						"description": "Elimina un ingrediente si no existe relacion con una pizza, caso contrario se genera un ValidationError. Requiere Autenticacion.\n\n**Obs**: reemplazar el texto *\\<ID-INGREDIENTE>* por el valor correspondiente."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
