@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "30a82607-3ce1-4b21-bdee-c9f40ab1194d",
+		"_postman_id": "d5c4e048-eb3b-4862-81cc-8289e6cdc260",
 		"name": "tdp-pizza-api",
 		"description": "Lista de endpoints creados para la REST API para una pizzeria, un proyecto de prueba de Technologies Development Paraguay.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -94,6 +94,17 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refresh",
+									"value": "",
+									"description": "Token de refresh de JWT",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
 							"raw": "http://localhost:8000/api/users/jwt-token/refresh/",
 							"protocol": "http",
@@ -125,9 +136,16 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token <TOKEN>",
-								"description": "Token de autorización",
+								"value": "Bearer <JWT-TOKEN>",
+								"description": "Token de autorización de JWT",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token <DRF-TOKEN>",
+								"description": "Token de autorización de DRF",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"url": {
@@ -155,9 +173,16 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token <TOKEN>",
-								"description": "Token de autorización",
+								"value": "Bearer <JWT-TOKEN>",
+								"description": "Token de autorización de JWT",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token <DRF-TOKEN>",
+								"description": "Token de autorización de DRF",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -214,9 +239,16 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token <TOKEN>",
-								"description": "Token de autorización",
+								"value": "Bearer <JWT-TOKEN>",
+								"description": "Token de autorización de JWT",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token <DRF-TOKEN>",
+								"description": "Token de autorización de DRF",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"url": {
@@ -245,9 +277,16 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token <TOKEN>",
-								"description": "Token de autorización",
+								"value": "Bearer <JWT-TOKEN>",
+								"description": "Token de autorización de JWT",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token <DRF-TOKEN>",
+								"description": "Token de autorización de DRF",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -305,9 +344,16 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token <TOKEN>",
-								"description": "Token de autorización",
+								"value": "Bearer <JWT-TOKEN>",
+								"description": "Token de autorización de JWT",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token <DRF-TOKEN>",
+								"description": "Token de autorización de DRF",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -365,9 +411,16 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token <TOKEN>",
-								"description": "Token de autorización",
+								"value": "Bearer <JWT-TOKEN>",
+								"description": "Token de autorización de JWT",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token <DRF-TOKEN>",
+								"description": "Token de autorización de DRF",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -413,9 +466,16 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token <TOKEN>",
-								"description": "Token de autorización",
+								"value": "Bearer <JWT-TOKEN>",
+								"description": "Token de autorización de JWT",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token <DRF-TOKEN>",
+								"description": "Token de autorización de DRF",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -460,9 +520,16 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token <TOKEN>",
-								"description": "Token de autorización",
+								"value": "Bearer <JWT-TOKEN>",
+								"description": "Token de autorización de JWT",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token <DRF-TOKEN>",
+								"description": "Token de autorización de DRF",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -508,9 +575,16 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token <TOKEN>",
-								"description": "Token de autorización",
+								"value": "Bearer <JWT-TOKEN>",
+								"description": "Token de autorización de JWT",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token <DRF-TOKEN>",
+								"description": "Token de autorización de DRF",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -556,9 +630,16 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token <TOKEN>",
-								"description": "Token de autorización",
+								"value": "Bearer <JWT-TOKEN>",
+								"description": "Token de autorización de JWT",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token <DRF-TOKEN>",
+								"description": "Token de autorización de DRF",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"url": {

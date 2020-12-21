@@ -1,7 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
 from rest_framework import viewsets, mixins, status
-from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.serializers import ValidationError
 from rest_framework.decorators import action
@@ -23,7 +22,6 @@ class PizzaViewSet(
     viewsets.GenericViewSet
 ):
     """ViewSet para listar, obtener, crear y actualizar el objeto Pizza"""
-    authentication_classes = (TokenAuthentication,)
     queryset = models.Pizza.objects.all()
 
     def get_queryset(self):
@@ -83,7 +81,6 @@ class IngredientViewSet(
     """
     ViewSet para crear, obtener, actualizar y destruir el objeto Ingredient
     """
-    authentication_classes = (TokenAuthentication,)
     serializer_class = serializers.IngredientSerializer
     permission_classes = (StaffOrSuperuserPermission,)
     queryset = models.Ingredient.objects.all()
