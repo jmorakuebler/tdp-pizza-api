@@ -14,8 +14,25 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "",
+									"description": "Usuario",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"description": "Contraseña",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
-							"raw": "http://localhost:8000/api/users/drf-token",
+							"raw": "http://localhost:8000/api/users/drf-token/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -24,7 +41,8 @@
 							"path": [
 								"api",
 								"users",
-								"drf-token"
+								"drf-token",
+								""
 							]
 						},
 						"description": "Obtiene el token de DRF a partir de los campos `username` y `password` del usuario."
@@ -36,8 +54,25 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "",
+									"description": "Usuario",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"description": "Contraseña",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
-							"raw": "http://localhost:8000/api/users/jwt-token",
+							"raw": "http://localhost:8000/api/users/jwt-token/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -46,7 +81,8 @@
 							"path": [
 								"api",
 								"users",
-								"jwt-token"
+								"jwt-token",
+								""
 							]
 						},
 						"description": "Obtiene el token de JWT a partir de los campos `username` y `password` del usuario."
@@ -59,7 +95,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/users/jwt-token/refresh",
+							"raw": "http://localhost:8000/api/users/jwt-token/refresh/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -69,7 +105,8 @@
 								"api",
 								"users",
 								"jwt-token",
-								"refresh"
+								"refresh",
+								""
 							]
 						},
 						"description": "Actualiza el token de JWT."
@@ -85,7 +122,14 @@
 					"name": "Lista Pizzas",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token <TOKEN>",
+								"description": "Token de autorización",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8000/api/pizzas/pizzas/",
 							"protocol": "http",
@@ -108,7 +152,43 @@
 					"name": "Crear una Pizza",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token <TOKEN>",
+								"description": "Token de autorización",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"description": "Nombre de la pizza",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "",
+									"description": "Precio (integer)",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "",
+									"description": "Disponible (true o false)",
+									"type": "text"
+								},
+								{
+									"key": "ingredients",
+									"value": "",
+									"description": "Lista de IDs de Ingredient",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
 							"raw": "http://localhost:8000/api/pizzas/pizzas/",
 							"protocol": "http",
@@ -131,7 +211,14 @@
 					"name": "Obtener Pizza",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token <TOKEN>",
+								"description": "Token de autorización",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8000/api/pizzas/pizzas/<ID-PIZZA>/",
 							"protocol": "http",
@@ -155,7 +242,43 @@
 					"name": "Actualizar Pizza",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token <TOKEN>",
+								"description": "Token de autorización",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"description": "Nombre de la pizza",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "",
+									"description": "Precio (integer)",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "",
+									"description": "Disponible (true o false)",
+									"type": "text"
+								},
+								{
+									"key": "ingredients",
+									"value": "",
+									"description": "Lista de IDs de Ingredient",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
 							"raw": "http://localhost:8000/api/pizzas/pizzas/<ID-PIZZA>/",
 							"protocol": "http",
@@ -179,7 +302,43 @@
 					"name": "Actualizar Parcial Pizza",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token <TOKEN>",
+								"description": "Token de autorización",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"description": "Nombre de la pizza",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "",
+									"description": "Precio (integer)",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "",
+									"description": "Disponible (true o false)",
+									"type": "text"
+								},
+								{
+									"key": "ingredients",
+									"value": "",
+									"description": "Lista de IDs de Ingredient",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
 							"raw": "http://localhost:8000/api/pizzas/pizzas/<ID-PIZZA>/",
 							"protocol": "http",
@@ -203,7 +362,25 @@
 					"name": "Actualizar Ingredientes",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token <TOKEN>",
+								"description": "Token de autorización",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ingredients",
+									"value": "",
+									"description": "Lista de IDs de Ingredient",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
 							"raw": "http://localhost:8000/api/pizzas/pizzas/<ID-PIZZA>/ingredientes/",
 							"protocol": "http",
@@ -233,7 +410,31 @@
 					"name": "Crear Ingrediente",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token <TOKEN>",
+								"description": "Token de autorización",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"description": "Nombre del ingrediente",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "",
+									"description": "Categoría del ingrediente ('B' o 'P')",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
 							"raw": "http://localhost:8000/api/pizzas/ingredientes/",
 							"protocol": "http",
@@ -256,7 +457,31 @@
 					"name": "Actualizar Ingrediente",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token <TOKEN>",
+								"description": "Token de autorización",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"description": "Nombre del ingrediente",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "",
+									"description": "Categoría del ingrediente ('B' o 'P')",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
 							"raw": "http://localhost:8000/api/pizzas/ingredientes/<ID-INGREDIENTE>/",
 							"protocol": "http",
@@ -277,10 +502,65 @@
 					"response": []
 				},
 				{
+					"name": "Actualizar Parcial Ingrediente",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token <TOKEN>",
+								"description": "Token de autorización",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"description": "Nombre del ingrediente",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "",
+									"description": "Categoría del ingrediente ('B' o 'P')",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/pizzas/ingredientes/<ID-INGREDIENTE>/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pizzas",
+								"ingredientes",
+								"<ID-INGREDIENTE>",
+								""
+							]
+						},
+						"description": "Actualiza los datos de un Ingrediente. Solo es necesario enviar los datos a ser modificados. Requiere Autenticacion.\n\n**Obs**: reemplazar el texto *\\<ID-INGREDIENTE>* por el valor correspondiente."
+					},
+					"response": []
+				},
+				{
 					"name": "Eliminar Ingrediente",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token <TOKEN>",
+								"description": "Token de autorización",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8000/api/pizzas/ingredientes/<ID-INGREDIENTE>/",
 							"protocol": "http",
