@@ -3,6 +3,7 @@ LABEL mantainer="Jordan Mora"
 
 # Recomendado para ejecutar Python en contenedores
 ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
 
 RUN apk add --update --no-cache postgresql-client
 RUN apk add --update --no-cache --virtual .tmp-build-deps \
