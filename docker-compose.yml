@@ -6,6 +6,7 @@ services:
       - "8000:8000"
     volumes:
       - ./app:/app
+      - ./initial_data.json:/initial_data.json
     command: >
       sh -c "./manage.py wait_for_db && ./manage.py migrate && ./manage.py runserver 0.0.0.0:8000"
     environment:
